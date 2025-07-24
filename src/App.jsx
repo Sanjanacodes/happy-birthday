@@ -24,7 +24,7 @@ function App() {
         <div className="message-card">
           <h2>To the best boyfriend ever,</h2>
           <p>
-            Every moment with you is a gift. I hope your birthday is as amazing
+            Every moment with you is a gift!! I hope your birthday is as amazing
             as you are!
             <br />
             Here’s to more adventures, laughter, and memories together. I love
