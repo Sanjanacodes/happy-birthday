@@ -2,38 +2,85 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [showMessage, setShowMessage] = useState(false);
+  const [step, setStep] = useState(1);
+  const [input, setInput] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = () => {
+    if (step === 1 && input.trim().toLowerCase() === "3000") {
+      setStep(2);
+      setInput("");
+      setError("");
+    } else if (step === 2 && input.trim().toLowerCase() === "2999") {
+      setStep(3);
+      setError("");
+    } else {
+      setError("Access Denied! Try again, agent.");
+    }
+  };
 
   return (
-    <div className="birthday-container">
-      <div className="balloons">
-        <div className="balloon red" />
-        <div className="balloon blue" />
-        <div className="balloon yellow" />
-        <div className="balloon green" />
+    <div className="birthday-container hacker-theme">
+      <div className="terminal-header">[SECURE BIRTHDAY SERVER v1.0]</div>
+      <div className="screen">
+        <h1 className="main-title">🎉 BIRTHDAY ACCESS CONTROL 🎉</h1>
+        <p className="subtitle">
+          {" "}
+          {step === 3
+            ? "✅ AUTHENTICATED !!!"
+            : "Authentication required to proceed... 🔐"}
+        </p>
+
+        {step < 3 && (
+          <div className="puzzle-box">
+            <p>
+              <strong>Security Question:</strong>{" "}
+              {step === 1
+                ? "How much do I love you?"
+                : "How much do you love me?"}
+            </p>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="input-field"
+              placeholder="Enter love amount"
+            />
+            <button className="reveal-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+            {error && <p className="error-text">{error}</p>}
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="message-card">
+            <h2>✅ Access Fully Granted!</h2>
+            <p>
+              Welcome, Agent Love! 🎂 <br />
+              Your mission, should you choose to accept it: Enjoy your day to
+              the fullest! 💖
+              <br />
+              <br />
+              Here's your secret birthday message:
+              <br />
+              You light up my life like a perfectly secured server — stable,
+              strong, and impossible to replace.
+              <br />I love you more than encrypted packets on a clean network.
+              🛡️❤️
+            </p>
+            <p className="signature">
+              Forever yours,
+              <br />
+              Your Partner in (Cyber)Crime 💋
+            </p>
+          </div>
+        )}
       </div>
-      <h1 className="main-title">Happy Birthday, My Love! 🎉</h1>
-      <p className="subtitle">
-        Wishing you the happiest birthday, filled with love, laughter, and all
-        your favorite things.
-      </p>
-      <button className="reveal-btn" onClick={() => setShowMessage(true)}>
-        {showMessage ? "💖" : "Click to reveal your surprise!"}
-      </button>
-      {showMessage && (
-        <div className="message-card">
-          <h2>To the best boyfriend ever,</h2>
-          <p>
-            Every moment with you is a gift!! I hope your birthday is as amazing
-            as you are!
-            <br />
-            Here’s to more adventures, laughter, and memories together. I love
-            you so much! 💕
-          </p>
-          <div className="confetti" />
-        </div>
-      )}
-      <footer className="footer">Made with ❤️ by your girlfriend</footer>
+
+      <footer className="footer">
+        &lt;/&gt; Puzzle solved by the best hacker ever 🧠
+      </footer>
     </div>
   );
 }
