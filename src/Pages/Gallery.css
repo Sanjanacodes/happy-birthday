@@ -1,0 +1,109 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: rgb(227, 177, 207);
+}
+
+/* Flip card container */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 320px;
+  perspective: 1000px;
+  cursor: grabbing;
+}
+.flip-card :hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ff0066;
+}
+
+/* Inner wrapper */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* Flip state */
+.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & back */
+.flip-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* border: 1px solid #00ff00; */
+  border-radius: 10px;
+  box-shadow: 0 0 12px #00ff0022;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(227, 177, 207);
+  overflow: hidden;
+}
+
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* border: 1px solid #00ff00; */
+  border-radius: 10px;
+  box-shadow: 0 0 12px #00ff0022;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(166, 54, 136);
+  overflow: hidden;
+}
+
+/* Front side (image) */
+.flip-front img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: rgb(227, 177, 207);
+}
+
+/* Back side (message) */
+.flip-back {
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
+
+.flip-message {
+  color: #38022d;
+  font-size: 0.95rem;
+  text-align: center;
+  text-shadow: 0 0 1px #000000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+}
+/* Nav links */
+.nav-link-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.nav-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #d1d6dc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}

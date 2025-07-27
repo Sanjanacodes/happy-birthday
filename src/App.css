@@ -1,96 +1,169 @@
+/* Global styles */
 body {
-  background: linear-gradient(135deg, #1a3c5e 0%, #160109 100%);
-  min-height: 100vh;
-  font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #0f0f0f;
+  color: #33ff33;
 }
 
+/* Container */
 .birthday-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem 1rem 1rem 1rem;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  position: relative;
-  margin-top: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+/* Terminal header */
+.terminal-header {
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #00ffff;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 2px solid #00ffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* Main content screen */
+.screen {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Main title */
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #66ff66;
+  transition: 0.3s ease-in-out;
+}
+
+/* Input + Button */
+.puzzle-box {
+  margin-top: 1.5rem;
+}
+
+.input-field {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: #000;
+  border: 2px solid #33ff33;
+  color: #33ff33;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.reveal-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #003300;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.reveal-btn:hover {
+  background-color: #004d00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* Error */
+.error-text {
+  color: #ff4d4d;
+  margin-top: 0.8rem;
+  font-weight: bold;
+  animation: shake 0.3s;
+}
+
+/* Birthday message card */
+.message-card {
+  background-color: #111;
+  border: 2px dashed #00ff00;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  color: #bfffbf;
+  box-shadow: 0 0 15px #00ff00;
+  animation: fadeIn 1s ease-in;
+}
+
+.signature {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #ff99cc;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+}
+
+/* Nav links */
+.nav-link {
+  color: #00ffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: medium;
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 5px #00ffff;
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes shake {
+  0% {
+    transform: translateX(-3px);
+  }
+  25% {
+    transform: translateX(3px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-.main-title {
-  font-size: 2.5rem;
-  color: #d7acb2;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-.subtitle {
-  font-size: 1.2rem;
-  color: #9f7777;
-  margin-bottom: 1.5rem;
-}
-.reveal-btn {
-  background: linear-gradient(90deg, #ff6b81 0%, #ffe066 100%);
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(255, 107, 129, 0.15);
-  transition: background 0.3s;
-}
-.reveal-btn:hover {
-  background: linear-gradient(90deg, #ffe066 0%, #ff6b81 100%);
-}
-.message-card {
-  background: #fff0f6;
-  border-radius: 18px;
-  padding: 1.5rem 1rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 16px rgba(255, 107, 129, 0.08);
-  animation: fadeIn 1s;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #333;
-  position: relative;
-}
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-.confetti {
-  width: 100%;
-  height: 30px;
-  background: repeating-linear-gradient(
-    90deg,
-    #ff6b81 0 5px,
-    #ffe066 5px 10px,
-    #6bc1ff 10px 15px,
-    #7fffd4 15px 20px
-  );
-  border-radius: 8px;
-  margin: 1rem 0 0.5rem 0;
-  opacity: 0.7;
-}
-.footer {
-  margin-top: 2rem;
-  color: #888;
-  font-size: 1rem;
 }
