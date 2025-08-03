@@ -1,0 +1,124 @@
+/* ChatGemini styles */
+.customGPTSaman {
+  /* max-width: 4800px; */
+  margin: 2rem auto;
+  background: #181c24;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.customGPTSaman h2 {
+  color: #ff6b81;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chat-window {
+  background: #23272f;
+  border-radius: 12px;
+  min-height: 260px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  box-shadow: 0 2px 8px rgba(255, 107, 129, 0.08);
+}
+
+.chat-bubble {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border-radius: 18px;
+  font-size: 1.13rem;
+  max-width: 80%;
+  word-break: break-word;
+  position: relative;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #2e3440;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+}
+.user-bubble {
+  align-self: flex-end;
+  background: linear-gradient(90deg, #ffb347 0%, #ff6b81 100%);
+  color: #181c24;
+  font-weight: bold;
+}
+.gemini-bubble {
+  align-self: flex-start;
+  background: linear-gradient(90deg, #6bc1ff 0%, #7fffd4 100%);
+  color: #181c24;
+  font-weight: bold;
+}
+.chat-bubble span {
+  font-size: 1.18rem;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+.loading {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.chat-input-row .input-field {
+  flex: 1;
+  font-size: 1.08rem;
+  border-radius: 8px;
+  border: 2px solid #ff6b81;
+  background: #23272f;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.chat-input-row .input-field:focus {
+  border: 2px solid #6bc1ff;
+}
+
+.chat-input-row .reveal-btn {
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6b81 0%, #6bc1ff 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input-row .reveal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gemini-answer {
+  margin-top: 1rem;
+  color: #6bc1ff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.error-text {
+  color: #ff6b81;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

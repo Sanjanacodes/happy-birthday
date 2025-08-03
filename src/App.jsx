@@ -3,6 +3,8 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import MessagePage from "./Pages/MessagePage";
 import ImagePage from "./Pages/ImagePages";
+import SamanGPT from "./Pages/SamanGPT";
+import SanjanaGPT from "./Pages/SanjanaGPT";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -70,8 +72,10 @@ function App() {
 
       <Route path="/message" element={<MessagePage />} />
       <Route path="/images" element={<ImagePage />} />
-      <Route path="/videos" element={<VideosPage />} />
-      <Route path="/memories" element={<MemoriesPage />} />
+      <Route path="/customGPTSaman" element={<SamanGPT />} />
+      <Route path="/customGPTSanjana" element={<SanjanaGPT />} />
+      {/* <Route path="/videos" element={<VideosPage />} />
+      <Route path="/memories" element={<MemoriesPage />} /> */}
     </Routes>
   );
 }

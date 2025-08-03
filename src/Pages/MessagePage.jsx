@@ -17,12 +17,12 @@ function MessagePage() {
           📷 View Images
         </a>{" "}
         |{" "}
-        <a className="nav-link" href="/videos">
-          🎬 Watch Videos
+        <a className="nav-link" href="/customGPTSaman">
+          🤖 Chat with Saamaan
         </a>{" "}
         |{" "}
-        <a className="nav-link" href="/memories">
-          📖 Memories
+        <a className="nav-link" href="/customGPTSanjana">
+          💬 Chat with Sanjana
         </a>
       </nav>
     </div>
