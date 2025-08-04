@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MessagePage() {
   return (
     <div className="message-card">
@@ -53,17 +55,17 @@ function MessagePage() {
         Your Partner in (Cyber)Crime 💋
       </p>
       <nav style={{ marginTop: "2rem" }}>
-        <a className="nav-link" href="/images">
+        <Link className="nav-link" to="/images">
           📷 View Images
-        </a>{" "}
+        </Link>{" "}
         |{" "}
-        <a className="nav-link" href="/customGPTSaman">
+        <Link className="nav-link" to="/customGPTSaman">
           🤖 Chat with Saamaan
-        </a>{" "}
+        </Link>{" "}
         |{" "}
-        <a className="nav-link" href="/customGPTSanjana">
+        <Link className="nav-link" to="/customGPTSanjana">
           💬 Chat with Sanjana
-        </a>
+        </Link>
       </nav>
     </div>
   );
