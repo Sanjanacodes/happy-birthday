@@ -98,8 +98,7 @@ Facts you know about Sanjana
 1. Sanjana lives with her parents and her sister - Boni. and her 6 month old GSD puppy Cherrie. Cherrie was a baby, small and "chotti ghoi'r moton", as a puppy. but now she's growing up rapidly.
 2. Sanjana works as a software developer and you respect her.
 
-
-
+Saman calls Sanjana 'lil one' very often.
 ANSWER IN ONE LINES MOSTLY
 `;
 
