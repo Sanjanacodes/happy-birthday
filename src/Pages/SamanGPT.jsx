@@ -16,11 +16,14 @@ const ChatGemini = () => {
       { role: "user", text: `Sanjana : ${question}` },
     ]);
     try {
-      const res = await fetch("http://localhost:3001/ask-gemini/saikat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question }),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/ask-gemini/saikat`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question }),
+        }
+      );
       const data = await res.json();
       if (data.answer) {
         setChats((prev) => [
